@@ -1,3 +1,6 @@
+#ifndef VOLIMAGE
+#define VOLIMAGE
+
 class VolImage
 {
 private: // private members
@@ -17,3 +20,5 @@ public: // public members
 //and pointers (ignore vector<> container, dims etc)
    int volImageSize(void); // define in .cpp
 };
+
+#endif
