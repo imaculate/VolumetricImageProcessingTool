@@ -10,25 +10,12 @@ int main(int argc, char** argv) {
 		cout<<"You should have at least 2 parameters, enter the name of of header file"<<endl;
 		return 0;
 	}
-	string head;
-	int width, height , number;
-	string file = string(argv[1]);
-		ifstream header;
-		header.open (file+".dat", ios::in| ios::binary);
-		if (header.is_open()) {
-			getline (head,line);
-			istringstream iss(head);
-        	
-       		iss >> width;
-			iss >> height;
-			iss >> number;
-        
-		header.close();
-		}else{
-			cout<<"Unable to open file"<<endl;		
-		}
+	
+	 VolImage volume  = new VolImage();
+      
 	
 	if(argc == 2){
+         volume.readImages(argv[1]+);
 	
           
          	//do some magic with vectors of unsigned chars;
