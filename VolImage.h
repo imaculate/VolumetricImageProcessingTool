@@ -1,6 +1,6 @@
 #ifndef VOLIMAGE
 #define VOLIMAGE
-
+namespace MSHIMA001{
 class VolImage
 {
 private: // private members
@@ -20,6 +20,7 @@ public: // public members
 //and pointers (ignore vector<> container, dims etc)
    int volImageSize(void); // define in .cpp
    int volNum(void);
+   void extractRow(int rowId, std::string output_prefix);
 };
-
+}
 #endif
