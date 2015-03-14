@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include "VolImage.h"
 
 using namespace std;
 
@@ -11,16 +12,16 @@ int main(int argc, char** argv) {
 		return 0;
 	}
 	
-	 VolImage volume  = new VolImage();
+	 VolImage volume ;
       
 	
 	if(argc == 2){
-         volume.readImages(argv[1]+);
+         volume.readImages(argv[1]);
 	
           
          	//do some magic with vectors of unsigned chars;
-			cout<< "Number of images: "<< number<< endl;
-			cout<< "Number of bytes required: "<< number*width*height << endl;
+			cout<< "Number of images: "<< volume.volNum()<< endl;
+			cout<< "Number of bytes required: "<< volume.volImageSize()<< endl;
          
         
 		
@@ -34,11 +35,11 @@ int main(int argc, char** argv) {
 		
 	}else if(argc == 5){
 	
-	}}else if(argc == 6 ){
+	}else if(argc == 6 ){
 		
 	}else{
-		cout<<
-		}
+		
+	}
 	return 0;
     
     
