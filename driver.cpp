@@ -10,30 +10,20 @@ using namespace std;
 
 
 int main(int argc, char** argv) {
+   //program will not run if there are  no parameters
 	if(argc <2){
-		cout<<"You should have at least 2 parameters, enter the name of of header file"<<endl;
+		cout<<"You should have at least 2 parameters, enter the name of of headerfile"<<endl;
 		return 0;
 	}
 	
 	 MSHIMA001::VolImage volume ;
     volume.readImages(argv[1]);
-	
-	if(argc == 2){
-        
-	
-          
-         	//do some magic with vectors of unsigned chars;
-			cout<< "Number of images: "<< volume.volNum()<< endl;
-			cout<< "Number of bytes required: "<< volume.volImageSize()<< endl;
-         
-        
-		
-
-	
-
     
-			
-	}else if(argc == 6){
+    cout<< "Number of images: "<< volume.volNum()<< endl;
+	 cout<< "Number of bytes required: "<< volume.volImageSize()<< endl;
+	
+   
+	if(argc == 6){
       if(string(argv[2]).compare("-d")==0){
          int i,j;
          istringstream iss(argv[3]);
@@ -43,6 +33,8 @@ int main(int argc, char** argv) {
          volume.diffmap(i,j,argv[5]);
          
          cout<<"The difference between images "<< i <<" and "<<j<<" has been stored in "<< argv[5]<< ".raw"<<endl;
+         
+        
          
       }else{
          //error handling.
@@ -76,13 +68,16 @@ int main(int argc, char** argv) {
       }
       
       
-     }else{
+     }else if(argc!=2){
+      //error handling.
 		   cout<<"Enter correct format of commands"<<endl;
          cout<<"volimage <imageBase>"<<endl;
-         cout<<"volimage <imagebase> -g i utput_file_name"<<endl;
+         cout<<"volimage <imagebase> -g i output_file_name"<<endl;
          cout<<"volimage <imageBase> -x i output file name:"<<endl;
          cout<<"volimage <imageBase> -d i j output_file_name"<<endl;
 	}
+   
+  
 	return 0;
     
     
