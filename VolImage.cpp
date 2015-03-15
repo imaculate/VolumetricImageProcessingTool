@@ -17,12 +17,12 @@ MSHIMA001::VolImage::VolImage(){
 MSHIMA001::VolImage::~VolImage(){
    for(int l = 0; l< slices.size(); l++){
       for(int m = 0; m< height; m++){
-         for(int n = 0; n< width; n++){
-            delete  &(slices[l][m][n]);
-         }
-         delete slices[l][m];
+        /* for(int n = 0; n< width; n++){
+            delete  slices[l][m][n];
+         }*/
+         delete [] slices[l][m];
       }
-      //delete slices[l];
+      delete slices[l];
       
       
    }
@@ -162,7 +162,7 @@ void MSHIMA001::VolImage::extract(int sliceId, std::string output_prefix){
 //and pointers (ignore vector<> container, dims etc)
 int MSHIMA001::VolImage::volImageSize(void){
    int number = slices.size();
-   return number* height*(1+ width);
+   return number* height*(sizeof(unsigned char**)+ width);
 }
 
 int MSHIMA001::VolImage::volNum(void){

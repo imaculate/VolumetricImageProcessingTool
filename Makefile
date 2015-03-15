@@ -1,10 +1,10 @@
 CC=g++
 CCFLAGS=-std=c++11
-volimage: driver.cpp VolImage.o VolImage.h 
-   $(CC) $(CCFLAGS)-g -o volimage driver.cpp
+volimage: driver.cpp VolImage.cpp VolImage.h 
+	$(CC) $(CCFLAGS) -g -o volimage driver.cpp VolImage.cpp
    
 .cpp.o:
-   $(CC) $(CCFLAGS) -c $<
+	$(CC) $(CCFLAGS) -c $<
    
 
    
@@ -12,4 +12,4 @@ volimage: driver.cpp VolImage.o VolImage.h
    
       
 clean:
-   rm -f *.o
+	rm -f *.o

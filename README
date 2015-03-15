@@ -11,10 +11,10 @@ It stores binary data into a dynamically allocated 3D array and can perform oper
 Instructions: Extract the tar file. Navigate to the destination folder from the command line. Enter make
 Use the following  commands to run the different options.
 
-   volimage <imageBase> //print number of images and number of bytes used
-   volimage <imagebase> -g i output_file_name //extract the ith row of all slices to output_file_name with corresponding header.
-   volimage <imageBase> -x i output file name //extract the ith slice to output_file_name with corresponding header.
-   volimage <imageBase> -d i j output_file_name //create a raw output file with the difference between slice i and j.
+  ./ volimage <imageBase> //print number of images and number of bytes used
+  ./ volimage <imagebase> -g i output_file_name //extract the ith row of all slices to output_file_name with corresponding header.
+  ./ volimage <imageBase> -x i output file name //extract the ith slice to output_file_name with corresponding header.
+  ./ volimage <imageBase> -d i j output_file_name //create a raw output file with the difference between slice i and j.
  
  
 	 
